@@ -1,0 +1,17 @@
+frontend:
+  containers:
+    image: jdvincent/slack-webhook-frontend:latest
+
+  ingress:
+    ingressClassName: kong
+    host: null
+
+backend:
+  containers:
+    image: jdvincent/slack-webhook-backend:latest
+
+postgres:
+  envVars:
+    POSTGRES_USER: postgres
+    POSTGRES_PASSWORD: postgres
+    POSTGRES_DB: blog_db
