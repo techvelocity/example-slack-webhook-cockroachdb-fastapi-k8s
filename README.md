@@ -6,6 +6,7 @@
 3. Run the commands below to start the application in Kubernetes
 
 ```
+kubectl create configmap certificate-configmap --from-file=root.crt=root.crt
 kubectl create secret generic cockroachdb-credentials --from-literal=password=<password>
 kubectl create secret generic slack-webhook-url --from-literal=url=<url>
 helm template . -f values.yaml | kubectl apply -f -

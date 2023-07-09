@@ -1,10 +1,6 @@
 # Use a lightweight Python image
 FROM python:3.11-slim-buster
 
-WORKDIR /root/.postgresql
-
-COPY root.crt .
-
 # Set the working directory
 WORKDIR /app
 
