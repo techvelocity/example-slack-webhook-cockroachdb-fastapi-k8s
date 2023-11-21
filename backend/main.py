@@ -8,8 +8,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 POSTGRES_PASSWORD = os.environ.get('POSTGRES_PASSWORD')
 SLACK_WEBHOOK_URL = os.environ.get('SLACK_WEBHOOK_URL')
-
-DATABASE_URI = f'cockroachdb://jeff:{POSTGRES_PASSWORD}@mobile-feline-2840.g95.cockroachlabs.cloud:26257/postgres?sslmode=verify-full'
+DATABASE_URI = f'postgresql://jeff:{POSTGRES_PASSWORD}@apex-whale-2860.g95.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full'
 engine = create_engine(DATABASE_URI)
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
